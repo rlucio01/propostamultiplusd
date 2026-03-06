@@ -430,14 +430,16 @@
 
   /* ---- PRICING ---- */
   .pricing-section { position: relative; z-index: 1; margin-bottom: 80px; }
-  .pricing-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 40px; align-items: start; }
+  .pricing-grid { display: flex; justify-content: center; margin-top: 40px; }
   .price-card {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 20px;
-    padding: 32px 28px;
+    padding: 40px 40px;
     position: relative;
     transition: all 0.3s ease;
+    width: 100%;
+    max-width: 520px;
   }
   .price-card:hover { transform: translateY(-4px); }
   .price-card.featured {
@@ -727,11 +729,11 @@
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <div class="proposal-tag"><span></span> Proposta Comercial Nº 001/2025</div>
+    <div class="proposal-tag"><span></span> Proposta Comercial Nº 015/2026</div>
     <h1>Seu negócio merece<br>mais do que uma <span class="accent">planilha</span></h1>
     <p class="hero-sub">Um sistema completo feito sob medida para a MultiPlusD — controle total de serviços, pagamentos e fluxo de caixa em um só lugar.</p>
     <div class="meta-row">
-      <div class="meta-item">📅 <strong>Março de 2025</strong></div>
+      <div class="meta-item">📅 <strong>Março de 2026</strong></div>
       <div class="meta-item">⏱ <strong>Válida por 15 dias</strong></div>
       <div class="meta-item">🔒 <strong>Exclusiva e confidencial</strong></div>
     </div>
@@ -829,7 +831,7 @@
             <div class="dash-main">
               <div class="dash-topbar">
                 <div class="dash-title">Dashboard</div>
-                <div class="dash-date">Março 2025</div>
+                <div class="dash-date">Março 2026</div>
               </div>
               <div class="cards-row">
                 <div class="dash-card blue">
@@ -945,7 +947,7 @@
                   <div style="margin-top:12px;background:rgba(37,99,235,0.06);border:1px solid rgba(37,99,235,0.15);border-radius:8px;padding:10px;">
                     <div style="font-size:10px;color:var(--gray-2);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.08em;">Próximo recebimento</div>
                     <div style="font-size:13px;font-weight:700;color:var(--blue-light);">NF #0044 · R$ 4.800</div>
-                    <div style="font-size:10px;color:var(--gray-2);margin-top:2px;">Vence em 15/03/2025</div>
+                    <div style="font-size:10px;color:var(--gray-2);margin-top:2px;">Vence em 15/03/2026</div>
                   </div>
                 </div>
               </div>
@@ -1007,99 +1009,43 @@
 <section class="pricing-section">
   <div class="container">
     <div class="section-label">Investimento</div>
-    <h2 class="section-title">Escolha o plano ideal</h2>
-    <p class="section-desc">Implantação única + mensalidade de suporte e manutenção. Sem surpresas.</p>
+    <h2 class="section-title">Simples assim: um plano,<br>tudo incluso</h2>
+    <p class="section-desc">Implantação única + mensalidade de suporte e hospedagem. Sem surpresas, sem camadas.</p>
 
     <div class="pricing-grid">
-      <!-- BÁSICO -->
-      <div class="price-card">
-        <div class="plan-name">Plano</div>
-        <div class="plan-title">Essencial</div>
-        <div class="plan-subtitle">Para começar a substituir as planilhas hoje</div>
-
-        <div class="price-impl">
-          <div class="price-impl-label">Implantação (pagamento único)</div>
-          <div class="price-impl-value">R$ 3.500 <span>à vista</span></div>
-        </div>
-        <div class="price-monthly">
-          <div class="price-monthly-label">Mensalidade — Suporte e hospedagem</div>
-          <div class="price-monthly-value">R$ 150 <span>/mês</span></div>
-        </div>
-
-        <ul class="plan-features">
-          <li><span class="check">✓</span> Dashboard com indicadores</li>
-          <li><span class="check">✓</span> Cadastro de atendimentos</li>
-          <li><span class="check">✓</span> Controle de notas fiscais</li>
-          <li><span class="check">✓</span> Gestão de equipes</li>
-          <li><span class="check">✓</span> Fluxo de caixa básico</li>
-          <li><span class="check">✓</span> 11 tipos de serviço pré-cadastrados</li>
-          <li><span class="x">–</span> Relatórios avançados</li>
-          <li><span class="x">–</span> Exportação Excel/CSV</li>
-          <li><span class="x">–</span> Suporte via WhatsApp</li>
-        </ul>
-
-        <button class="plan-cta cta-outline" onclick="openModal('essencial')">Escolher Essencial</button>
-      </div>
-
-      <!-- RECOMENDADO -->
       <div class="price-card featured">
-        <div class="featured-badge">✦ Recomendado</div>
+        <div class="featured-badge">✦ Plano Único</div>
         <div class="plan-name">Plano</div>
         <div class="plan-title">Profissional</div>
-        <div class="plan-subtitle">O sistema completo, pronto para uso imediato</div>
+        <div class="plan-subtitle">O sistema completo, pronto para uso imediato — sem mensalidade surpresa, sem letra miúda</div>
 
-        <div class="price-impl">
-          <div class="price-impl-label">Implantação (pagamento único)</div>
-          <div class="price-impl-value">R$ 6.000 <span>à vista</span></div>
-        </div>
-        <div class="price-monthly">
-          <div class="price-monthly-label">Mensalidade — Suporte e hospedagem</div>
-          <div class="price-monthly-value">R$ 250 <span>/mês</span></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px;">
+          <div class="price-impl">
+            <div class="price-impl-label">Implantação (pagamento único)</div>
+            <div class="price-impl-value">R$ 6.000 <span>à vista</span></div>
+          </div>
+          <div class="price-monthly">
+            <div class="price-monthly-label">Mensalidade — Suporte e hospedagem</div>
+            <div class="price-monthly-value">R$ 250 <span>/mês</span></div>
+          </div>
         </div>
 
         <ul class="plan-features">
-          <li><span class="check">✓</span> Dashboard com indicadores</li>
-          <li><span class="check">✓</span> Cadastro de atendimentos</li>
-          <li><span class="check">✓</span> Controle de notas fiscais</li>
-          <li><span class="check">✓</span> Gestão de equipes</li>
-          <li><span class="check">✓</span> Fluxo de caixa completo</li>
+          <li><span class="check">✓</span> Dashboard com todos os indicadores financeiros</li>
+          <li><span class="check">✓</span> Cadastro rápido de atendimentos por placa</li>
+          <li><span class="check">✓</span> Controle completo de notas fiscais</li>
+          <li><span class="check">✓</span> Gestão de equipes terceirizadas com PIX</li>
+          <li><span class="check">✓</span> Fluxo de caixa com entradas e saídas</li>
           <li><span class="check">✓</span> 11 tipos de serviço pré-cadastrados</li>
-          <li><span class="check">✓</span> Relatórios avançados</li>
+          <li><span class="check">✓</span> Relatórios avançados por período</li>
           <li><span class="check">✓</span> Exportação Excel/CSV</li>
+          <li><span class="check">✓</span> Alertas de notas em atraso</li>
           <li><span class="check">✓</span> Suporte via WhatsApp</li>
+          <li><span class="check">✓</span> Hospedagem inclusa na mensalidade</li>
+          <li><span class="check">✓</span> Treinamento de uso incluso</li>
         </ul>
 
-        <button class="plan-cta cta-primary" onclick="openModal('profissional')">Escolher Profissional</button>
-      </div>
-
-      <!-- PREMIUM -->
-      <div class="price-card">
-        <div class="plan-name">Plano</div>
-        <div class="plan-title">Premium</div>
-        <div class="plan-subtitle">Suporte prioritário e evoluções contínuas</div>
-
-        <div class="price-impl">
-          <div class="price-impl-label">Implantação (pagamento único)</div>
-          <div class="price-impl-value">R$ 9.000 <span>à vista</span></div>
-        </div>
-        <div class="price-monthly">
-          <div class="price-monthly-label">Mensalidade — Suporte e hospedagem</div>
-          <div class="price-monthly-value">R$ 400 <span>/mês</span></div>
-        </div>
-
-        <ul class="plan-features">
-          <li><span class="check">✓</span> Tudo do Profissional</li>
-          <li><span class="check">✓</span> Suporte prioritário WhatsApp</li>
-          <li><span class="check">✓</span> 2h/mês de melhorias inclusas</li>
-          <li><span class="check">✓</span> Novos módulos sob demanda</li>
-          <li><span class="check">✓</span> Treinamento presencial/remoto</li>
-          <li><span class="check">✓</span> Backup automático diário</li>
-          <li><span class="check">✓</span> SLA de resposta em 4h</li>
-          <li><span class="check">✓</span> Domínio personalizado incluso</li>
-          <li><span class="check">✓</span> Relatório gerencial mensal</li>
-        </ul>
-
-        <button class="plan-cta cta-outline" onclick="openModal('premium')">Escolher Premium</button>
+        <button class="plan-cta cta-primary" onclick="openModal('profissional')" style="font-size:16px;padding:16px;">Contratar agora</button>
       </div>
     </div>
   </div>
@@ -1185,7 +1131,7 @@
 <footer>
   <div class="footer-inner">
     Proposta elaborada por <strong>Rafael</strong> para <strong>MultiPlusD Serviços de Transportes Automotivos</strong><br>
-    <span style="font-size:12px;opacity:0.5;margin-top:6px;display:block;">Proposta Nº 001/2025 · Válida por 15 dias · Confidencial</span>
+    <span style="font-size:12px;opacity:0.5;margin-top:6px;display:block;">Proposta Nº 015/2026 · Válida por 15 dias · Confidencial</span>
   </div>
 </footer>
 
@@ -1195,7 +1141,7 @@
     <div class="modal-icon">🎉</div>
     <div class="modal-title">Proposta Aceita!</div>
     <div class="modal-desc">Ótimo! Vamos começar o projeto. Clique abaixo para abrir o WhatsApp e confirmar o plano escolhido. Em breve entraremos em contato para agendar o kickoff.</div>
-    <a href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Aceitei%20a%20proposta%20do%20sistema%20MultiPlusD%20e%20quero%20come%C3%A7ar%20o%20projeto." target="_blank" style="display:inline-block;background:#25d366;color:white;padding:12px 28px;border-radius:10px;text-decoration:none;font-family:'Outfit',sans-serif;font-weight:600;font-size:15px;margin-bottom:12px;">
+    <a href="https://wa.me/5521993962050?text=Ol%C3%A1!%20Aceitei%20a%20proposta%20do%20sistema%20MultiPlusD%20e%20quero%20come%C3%A7ar%20o%20projeto." target="_blank" style="display:inline-block;background:#25d366;color:white;padding:12px 28px;border-radius:10px;text-decoration:none;font-family:'Outfit',sans-serif;font-weight:600;font-size:15px;margin-bottom:12px;">
       💬 Abrir WhatsApp
     </a>
     <br>
@@ -1212,25 +1158,14 @@
   </div>
 </div>
 
-<div class="modal-overlay" id="modal-essencial">
-  <div class="modal">
-    <div class="modal-icon">✨</div>
-    <div class="modal-title">Plano Essencial</div>
-    <div class="modal-desc">Você escolheu o plano <strong>Essencial</strong>.<br><br>Implantação: R$ 3.500 + mensalidade de R$ 150/mês. Clique abaixo para confirmar via WhatsApp.</div>
-    <a href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Quero%20o%20Plano%20Essencial%20do%20sistema%20MultiPlusD.%20Implanta%C3%A7%C3%A3o%20R%24%203.500%20%2B%20R%24%20150%2Fm%C3%AAs." target="_blank" style="display:inline-block;background:#25d366;color:white;padding:12px 28px;border-radius:10px;text-decoration:none;font-family:'Outfit',sans-serif;font-weight:600;font-size:15px;margin-bottom:12px;">
-      💬 Confirmar no WhatsApp
-    </a>
-    <br>
-    <button class="modal-close" style="background:transparent;border:1px solid var(--border);color:var(--gray);margin-top:8px;" onclick="closeModals()">Fechar</button>
-  </div>
-</div>
+
 
 <div class="modal-overlay" id="modal-profissional">
   <div class="modal">
     <div class="modal-icon">⭐</div>
     <div class="modal-title">Plano Profissional</div>
-    <div class="modal-desc">Você escolheu o plano <strong>Profissional</strong> — a escolha mais completa!<br><br>Implantação: R$ 6.000 + mensalidade de R$ 250/mês. Clique abaixo para confirmar via WhatsApp.</div>
-    <a href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Quero%20o%20Plano%20Profissional%20do%20sistema%20MultiPlusD.%20Implanta%C3%A7%C3%A3o%20R%24%206.000%20%2B%20R%24%20250%2Fm%C3%AAs." target="_blank" style="display:inline-block;background:#25d366;color:white;padding:12px 28px;border-radius:10px;text-decoration:none;font-family:'Outfit',sans-serif;font-weight:600;font-size:15px;margin-bottom:12px;">
+    <div class="modal-desc">Ótimo! Vamos começar o projeto.<br><br>Implantação: R$ 6.000 + mensalidade de R$ 250/mês. Clique abaixo para confirmar via WhatsApp e combinar os próximos passos.</div>
+    <a href="https://wa.me/5521993962050?text=Ol%C3%A1!%20Quero%20contratar%20o%20sistema%20MultiPlusD.%20Implanta%C3%A7%C3%A3o%20R%24%206.000%20%2B%20R%24%20250%2Fm%C3%AAs." target="_blank" style="display:inline-block;background:#25d366;color:white;padding:12px 28px;border-radius:10px;text-decoration:none;font-family:'Outfit',sans-serif;font-weight:600;font-size:15px;margin-bottom:12px;">
       💬 Confirmar no WhatsApp
     </a>
     <br>
@@ -1238,18 +1173,8 @@
   </div>
 </div>
 
-<div class="modal-overlay" id="modal-premium">
-  <div class="modal">
-    <div class="modal-icon">💎</div>
-    <div class="modal-title">Plano Premium</div>
-    <div class="modal-desc">Você escolheu o plano <strong>Premium</strong> — suporte máximo e evolução contínua!<br><br>Implantação: R$ 9.000 + mensalidade de R$ 400/mês. Clique abaixo para confirmar via WhatsApp.</div>
-    <a href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Quero%20o%20Plano%20Premium%20do%20sistema%20MultiPlusD.%20Implanta%C3%A7%C3%A3o%20R%24%209.000%20%2B%20R%24%20400%2Fm%C3%AAs." target="_blank" style="display:inline-block;background:#25d366;color:white;padding:12px 28px;border-radius:10px;text-decoration:none;font-family:'Outfit',sans-serif;font-weight:600;font-size:15px;margin-bottom:12px;">
-      💬 Confirmar no WhatsApp
-    </a>
-    <br>
-    <button class="modal-close" style="background:transparent;border:1px solid var(--border);color:var(--gray);margin-top:8px;" onclick="closeModals()">Fechar</button>
-  </div>
-</div>
+
+
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function openModal(type) {
