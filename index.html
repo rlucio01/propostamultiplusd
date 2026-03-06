@@ -199,8 +199,8 @@
   /* ---- SCREENSHOTS ---- */
   .screenshots-section { position: relative; z-index: 1; margin-bottom: 60px; }
   .screenshots-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 16px;
     margin-top: 40px;
   }
@@ -211,9 +211,14 @@
     background: var(--navy-3);
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
   }
   .screenshot-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
-  .screenshot-card.large { grid-column: span 2; }
+  .screenshot-card.large {
+    max-width: 100%;
+  }
   .screenshot-bar {
     background: var(--navy-2);
     padding: 10px 16px;
@@ -1045,7 +1050,7 @@
           <li><span class="check">✓</span> Treinamento de uso incluso</li>
         </ul>
 
-        <button class="plan-cta cta-primary" onclick="openModal('profissional')" style="font-size:16px;padding:16px;">Contratar agora</button>
+        <a href="https://wa.me/5521993962050?text=Ol%C3%A1%20Rafael!%20Aceitei%20a%20proposta%20do%20sistema%20MultiPlusD.%20Implanta%C3%A7%C3%A3o%20R%24%206.000%20%2B%20mensalidade%20R%24%20250%2Fm%C3%AAs.%20Quero%20come%C3%A7ar!" target="_blank" class="plan-cta cta-primary" style="font-size:16px;padding:16px;">Contratar agora</a>
       </div>
     </div>
   </div>
@@ -1115,9 +1120,9 @@
       </div>
 
       <div class="accept-buttons">
-        <button class="btn-accept" onclick="openModal('aceite')">
+        <a href="https://wa.me/5521993962050?text=Ol%C3%A1%20Rafael!%20Aceitei%20a%20proposta%20do%20sistema%20MultiPlusD.%20Implanta%C3%A7%C3%A3o%20R%24%206.000%20%2B%20mensalidade%20R%24%20250%2Fm%C3%AAs.%20Quero%20come%C3%A7ar!" target="_blank" class="btn-accept">
           ✅ Aceitar Proposta
-        </button>
+        </a>
         <button class="btn-decline" onclick="openModal('recusa')">
           Não tenho interesse no momento
         </button>
@@ -1136,18 +1141,6 @@
 </footer>
 
 <!-- MODALS -->
-<div class="modal-overlay" id="modal-aceite">
-  <div class="modal">
-    <div class="modal-icon">🎉</div>
-    <div class="modal-title">Proposta Aceita!</div>
-    <div class="modal-desc">Ótimo! Vamos começar o projeto. Clique abaixo para abrir o WhatsApp e confirmar o plano escolhido. Em breve entraremos em contato para agendar o kickoff.</div>
-    <a href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Aceitei%20a%20proposta%20do%20sistema%20MultiPlusD%20e%20quero%20come%C3%A7ar%20o%20projeto." target="_blank" style="display:inline-block;background:#25d366;color:white;padding:12px 28px;border-radius:10px;text-decoration:none;font-family:'Outfit',sans-serif;font-weight:600;font-size:15px;margin-bottom:12px;">
-      💬 Abrir WhatsApp
-    </a>
-    <br>
-    <button class="modal-close" style="background:transparent;border:1px solid var(--border);color:var(--gray);margin-top:8px;" onclick="closeModals()">Fechar</button>
-  </div>
-</div>
 
 <div class="modal-overlay" id="modal-recusa">
   <div class="modal">
@@ -1160,45 +1153,43 @@
 
 
 
-<div class="modal-overlay" id="modal-profissional">
-  <div class="modal">
-    <div class="modal-icon">⭐</div>
-    <div class="modal-title">Plano Profissional</div>
-    <div class="modal-desc">Ótimo! Vamos começar o projeto.<br><br>Implantação: R$ 6.000 + mensalidade de R$ 250/mês. Clique abaixo para confirmar via WhatsApp e combinar os próximos passos.</div>
-    <a href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Quero%20contratar%20o%20sistema%20MultiPlusD.%20Implanta%C3%A7%C3%A3o%20R%24%206.000%20%2B%20R%24%20250%2Fm%C3%AAs." target="_blank" style="display:inline-block;background:#25d366;color:white;padding:12px 28px;border-radius:10px;text-decoration:none;font-family:'Outfit',sans-serif;font-weight:600;font-size:15px;margin-bottom:12px;">
-      💬 Confirmar no WhatsApp
-    </a>
-    <br>
-    <button class="modal-close" style="background:transparent;border:1px solid var(--border);color:var(--gray);margin-top:8px;" onclick="closeModals()">Fechar</button>
-  </div>
-</div>
 
 
 
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+
+<script>
   function openModal(type) {
-    closeModals();
-    const m = document.getElementById('modal-' + type);
+    document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('active'));
+    var m = document.getElementById('modal-' + type);
     if (m) m.classList.add('active');
   }
   function closeModals() {
     document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('active'));
   }
-  document.querySelectorAll('.modal-overlay').forEach(overlay => {
-    overlay.addEventListener('click', function(e) {
-      if (e.target === overlay) closeModals();
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.modal-overlay').forEach(function(overlay) {
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeModals();
+      });
+    });
+
+    // Animate on scroll
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.feature-card, .price-card, .timeline-item').forEach(function(el) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(el);
     });
   });
-
-  // Animate bars on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.feature-card, .price-card, .
+</script>
