@@ -709,6 +709,7 @@
     .cards-row { grid-template-columns: repeat(2, 1fr); }
     .accept-card { padding: 36px 24px; }
     .accept-buttons { flex-direction: column; align-items: center; }
+    .plans-grid-two { grid-template-columns: 1fr !important; }
   }
 </style>
 </head>
@@ -1014,44 +1015,68 @@
 <section class="pricing-section">
   <div class="container">
     <div class="section-label">Investimento</div>
-    <h2 class="section-title">Simples assim: um plano,<br>tudo incluso</h2>
-    <p class="section-desc">Implantação única + mensalidade de suporte e hospedagem. Sem surpresas, sem camadas.</p>
+    <h2 class="section-title">Escolha a forma de pagamento<br>que faz mais sentido pra você</h2>
+    <p class="section-desc">Mesmo sistema completo nas duas opções. A diferença é só no bolso.</p>
 
-    <div class="pricing-grid">
-      <div class="price-card featured">
-        <div class="featured-badge">✦ Plano Único</div>
+    <div class="plans-grid-two" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px;margin:40px auto 0;">
+
+      <!-- Plano Mensal -->
+      <div class="price-card" style="display:flex;flex-direction:column;">
         <div class="plan-name">Plano</div>
-        <div class="plan-title">Profissional</div>
-        <div class="plan-subtitle">O sistema completo, pronto para uso imediato — sem mensalidade surpresa, sem letra miúda</div>
+        <div class="plan-title">Mensal</div>
+        <div class="plan-subtitle">Entrada menor, suporte e hospedagem inclusos todo mês</div>
 
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px;">
+        <div style="margin-bottom:24px;">
           <div class="price-impl">
             <div class="price-impl-label">Implantação (pagamento único)</div>
             <div class="price-impl-value">R$ 6.000 <span>à vista</span></div>
           </div>
-          <div class="price-monthly">
+          <div class="price-monthly" style="margin-top:12px;">
             <div class="price-monthly-label">Mensalidade — Suporte e hospedagem</div>
             <div class="price-monthly-value">R$ 250 <span>/mês</span></div>
           </div>
         </div>
 
-        <ul class="plan-features">
-          <li><span class="check">✓</span> Dashboard com todos os indicadores financeiros</li>
-          <li><span class="check">✓</span> Cadastro rápido de atendimentos por placa</li>
-          <li><span class="check">✓</span> Controle completo de notas fiscais</li>
-          <li><span class="check">✓</span> Gestão de equipes terceirizadas com PIX</li>
-          <li><span class="check">✓</span> Fluxo de caixa com entradas e saídas</li>
-          <li><span class="check">✓</span> 11 tipos de serviço pré-cadastrados</li>
-          <li><span class="check">✓</span> Relatórios avançados por período</li>
-          <li><span class="check">✓</span> Exportação Excel/CSV</li>
-          <li><span class="check">✓</span> Alertas de notas em atraso</li>
-          <li><span class="check">✓</span> Suporte via WhatsApp</li>
+        <ul class="plan-features" style="flex:1;">
+          <li><span class="check">✓</span> Sistema completo e funcional</li>
           <li><span class="check">✓</span> Hospedagem inclusa na mensalidade</li>
+          <li><span class="check">✓</span> Suporte via WhatsApp</li>
+          <li><span class="check">✓</span> Atualizações inclusas</li>
           <li><span class="check">✓</span> Treinamento de uso incluso</li>
         </ul>
 
-        <a href="https://wa.me/5521993962050?text=Ol%C3%A1%20Rafael!%20Aceitei%20a%20proposta%20do%20sistema%20MultiPlusD.%20Implanta%C3%A7%C3%A3o%20R%24%206.000%20%2B%20mensalidade%20R%24%20250%2Fm%C3%AAs.%20Quero%20come%C3%A7ar!" target="_blank" class="plan-cta cta-primary" style="font-size:16px;padding:16px;">Contratar agora</a>
+        <a href="https://wa.me/5521993962050?text=Ol%C3%A1%20Rafael!%20Quero%20o%20Plano%20Mensal%20do%20sistema%20MultiPlusD.%20Implanta%C3%A7%C3%A3o%20R%24%206.000%20%2B%20R%24%20250%2Fm%C3%AAs.%20Vamos%20come%C3%A7ar!" target="_blank" class="plan-cta" style="font-size:15px;padding:14px;background:var(--navy-3);border:1px solid var(--border);color:var(--white);border-radius:12px;text-align:center;text-decoration:none;font-family:'Outfit',sans-serif;font-weight:600;display:block;margin-top:auto;">Escolher este plano</a>
       </div>
+
+      <!-- Plano Licença -->
+      <div class="price-card featured" style="display:flex;flex-direction:column;">
+        <div class="featured-badge">✦ Sem mensalidade</div>
+        <div class="plan-name">Plano</div>
+        <div class="plan-title">Licença</div>
+        <div class="plan-subtitle">Pague uma vez, use para sempre — sem custo fixo mensal</div>
+
+        <div style="margin-bottom:24px;">
+          <div class="price-impl">
+            <div class="price-impl-label">Valor total (licença vitalícia)</div>
+            <div class="price-impl-value">R$ 9.000 <span>sem mensalidade</span></div>
+          </div>
+          <div style="margin-top:12px;padding:12px 14px;background:rgba(37,99,235,0.1);border:1px solid rgba(37,99,235,0.25);border-radius:10px;">
+            <div style="font-size:12px;color:var(--gray);font-family:'Outfit',sans-serif;margin-bottom:4px;">Parcelamento disponível</div>
+            <div style="font-size:18px;font-weight:700;color:var(--blue);font-family:'Outfit',sans-serif;">3× de R$ 3.000</div>
+          </div>
+        </div>
+
+        <ul class="plan-features" style="flex:1;">
+          <li><span class="check">✓</span> Sistema completo e funcional</li>
+          <li><span class="check">✓</span> Hospedagem inclusa por 12 meses</li>
+          <li><span class="check">✓</span> Suporte via WhatsApp</li>
+          <li><span class="check">✓</span> Atualizações inclusas por 12 meses</li>
+          <li><span class="check">✓</span> Treinamento de uso incluso</li>
+        </ul>
+
+        <a href="https://wa.me/5521993962050?text=Ol%C3%A1%20Rafael!%20Quero%20o%20Plano%20Licen%C3%A7a%20do%20sistema%20MultiPlusD.%20R%24%209.000%20sem%20mensalidade%20(ou%203x%20de%20R%24%203.000).%20Vamos%20come%C3%A7ar!" target="_blank" class="plan-cta cta-primary" style="font-size:15px;padding:14px;">Escolher este plano</a>
+      </div>
+
     </div>
   </div>
 </section>
