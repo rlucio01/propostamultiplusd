@@ -700,7 +700,23 @@
   .footer-inner { font-size: 13px; color: var(--gray-2); }
   .footer-inner strong { color: var(--gray); }
 
-  /* ---- RESPONSIVE ---- */
+  /* Optional services cards - subgrid alignment */
+  .optional-grid {
+    grid-template-rows: auto;
+  }
+  .opt-card {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+    max-width: none;
+    padding: 32px;
+  }
+  .opt-header { }
+  .opt-price  { margin: 20px 0; }
+  .opt-features { margin: 0 0 20px; }
+  .opt-btn { align-self: end; }
+
+
   @media (max-width: 720px) {
     .screenshots-grid, .features-grid, .pricing-grid { grid-template-columns: 1fr; }
     .screenshot-card.large { grid-column: span 1; }
@@ -1066,16 +1082,18 @@
       <h3 style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:700;color:var(--white);margin:0 0 8px;">Expanda quando quiser</h3>
       <p style="font-family:'Outfit',sans-serif;font-size:14px;color:var(--gray);margin:0 0 32px;">Não fazem parte do escopo atual — disponíveis para contratação futura a qualquer momento.</p>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px;margin:0 auto;" class="optional-grid">
+      <!-- grid com subgrid: cada card divide internamente em 4 linhas fixas -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows: auto auto auto auto;gap:20px;max-width:1100px;margin:0 auto;" class="optional-grid">
 
         <!-- Serviço 1: Página corporativa -->
-        <div class="price-card" style="display:flex;flex-direction:column;border-color:rgba(37,99,235,0.3);">
-          <div style="font-size:28px;margin-bottom:12px;">🌐</div>
-          <div class="plan-name">Serviço opcional</div>
-          <div class="plan-title" style="font-size:20px;">Página Corporativa</div>
-          <div class="plan-subtitle">Site profissional da MultiPlusD para clientes e parceiros</div>
-
-          <div style="margin:20px 0;">
+        <div class="price-card opt-card" style="border-color:rgba(37,99,235,0.3);">
+          <div class="opt-header">
+            <div style="font-size:28px;margin-bottom:12px;">🌐</div>
+            <div class="plan-name">Serviço opcional</div>
+            <div class="plan-title" style="font-size:20px;">Página Corporativa</div>
+            <div class="plan-subtitle">Site profissional da MultiPlusD para clientes e parceiros</div>
+          </div>
+          <div class="opt-price">
             <div class="price-impl">
               <div class="price-impl-label">Desenvolvimento (pagamento único)</div>
               <div class="price-impl-value">R$ 1.500 <span>à vista</span></div>
@@ -1085,45 +1103,72 @@
               <div style="font-size:12px;color:var(--gray);font-family:'Outfit',sans-serif;">Registro de domínio (~R$ 40/ano) por conta do contratante</div>
             </div>
           </div>
-
-          <ul class="plan-features" style="flex:1;">
+          <ul class="plan-features opt-features">
             <li><span class="check">✓</span> Design moderno e responsivo</li>
             <li><span class="check">✓</span> Apresentação da empresa e serviços</li>
             <li><span class="check">✓</span> Formulário de contato com WhatsApp</li>
             <li><span class="check">✓</span> Hospedagem inclusa</li>
           </ul>
-
-          <a href="https://wa.me/5521993962050?text=Ol%C3%A1%20Rafael!%20Tenho%20interesse%20no%20servi%C3%A7o%20de%20P%C3%A1gina%20Corporativa%20para%20a%20MultiPlusD%20(R%24%201.500).%20Podemos%20conversar%3F" target="_blank" class="plan-cta" style="font-size:14px;padding:12px;background:var(--navy-3);border:1px solid var(--border);color:var(--white);border-radius:12px;text-align:center;text-decoration:none;font-family:'Outfit',sans-serif;font-weight:600;display:block;margin-top:auto;">Tenho interesse</a>
+          <div class="opt-btn">
+            <a href="https://wa.me/5521993962050?text=Ol%C3%A1%20Rafael!%20Tenho%20interesse%20no%20servi%C3%A7o%20de%20P%C3%A1gina%20Corporativa%20para%20a%20MultiPlusD%20(R%24%201.500).%20Podemos%20conversar%3F" target="_blank" class="plan-cta" style="font-size:14px;padding:12px;background:var(--navy-3);border:1px solid var(--border);color:var(--white);border-radius:12px;text-align:center;text-decoration:none;font-family:'Outfit',sans-serif;font-weight:600;display:block;">Tenho interesse</a>
+          </div>
         </div>
 
         <!-- Serviço 2: Bot de IA -->
-        <div class="price-card" style="display:flex;flex-direction:column;border-color:rgba(37,99,235,0.3);">
-          <div style="font-size:28px;margin-bottom:12px;">🤖</div>
-          <div class="plan-name">Serviço opcional</div>
-          <div class="plan-title" style="font-size:20px;">Bot de Atendimento IA</div>
-          <div class="plan-subtitle">Assistente inteligente para atendimento automático da MultiPlusD</div>
-
-          <div style="margin:20px 0;">
+        <div class="price-card opt-card" style="border-color:rgba(37,99,235,0.3);">
+          <div class="opt-header">
+            <div style="font-size:28px;margin-bottom:12px;">🤖</div>
+            <div class="plan-name">Serviço opcional</div>
+            <div class="plan-title" style="font-size:20px;">Bot de Atendimento IA</div>
+            <div class="plan-subtitle">Assistente inteligente para atendimento automático da MultiPlusD</div>
+          </div>
+          <div class="opt-price">
             <div class="price-impl">
               <div class="price-impl-label">Desenvolvimento (pagamento único)</div>
               <div class="price-impl-value">R$ 3.000 <span>à vista</span></div>
             </div>
           </div>
-
-          <ul class="plan-features" style="flex:1;">
+          <ul class="plan-features opt-features">
             <li><span class="check">✓</span> Atendimento automático 24/7</li>
             <li><span class="check">✓</span> Respostas inteligentes por IA</li>
             <li><span class="check">✓</span> Integração com WhatsApp</li>
             <li><span class="check">✓</span> Treinado com dados da empresa</li>
           </ul>
+          <div class="opt-btn">
+            <a href="https://wa.me/5521993962050?text=Ol%C3%A1%20Rafael!%20Tenho%20interesse%20no%20Bot%20de%20Atendimento%20IA%20para%20a%20MultiPlusD%20(R%24%203.000).%20Podemos%20conversar%3F" target="_blank" class="plan-cta" style="font-size:14px;padding:12px;background:var(--navy-3);border:1px solid var(--border);color:var(--white);border-radius:12px;text-align:center;text-decoration:none;font-family:'Outfit',sans-serif;font-weight:600;display:block;">Tenho interesse</a>
+          </div>
+        </div>
 
-          <a href="https://wa.me/5521993962050?text=Ol%C3%A1%20Rafael!%20Tenho%20interesse%20no%20Bot%20de%20Atendimento%20IA%20para%20a%20MultiPlusD%20(R%24%203.000).%20Podemos%20conversar%3F" target="_blank" class="plan-cta" style="font-size:14px;padding:12px;background:var(--navy-3);border:1px solid var(--border);color:var(--white);border-radius:12px;text-align:center;text-decoration:none;font-family:'Outfit',sans-serif;font-weight:600;display:block;margin-top:auto;">Tenho interesse</a>
+        <!-- Serviço 3: Bot de consulta de placas -->
+        <div class="price-card opt-card" style="border-color:rgba(37,99,235,0.3);">
+          <div class="opt-header">
+            <div style="font-size:28px;margin-bottom:12px;">🔍</div>
+            <div class="plan-name">Serviço opcional</div>
+            <div class="plan-title" style="font-size:20px;">Bot de Consulta de Placas</div>
+            <div class="plan-subtitle">Consulte o status de qualquer veículo direto pelo WhatsApp, em segundos</div>
+          </div>
+          <div class="opt-price">
+            <div class="price-impl">
+              <div class="price-impl-label">Desenvolvimento (pagamento único)</div>
+              <div class="price-impl-value">R$ 2.500 <span>à vista</span></div>
+            </div>
+          </div>
+          <ul class="plan-features opt-features">
+            <li><span class="check">✓</span> Consulta por placa via WhatsApp</li>
+            <li><span class="check">✓</span> Busca automática no sistema</li>
+            <li><span class="check">✓</span> Resumo do serviço: status, equipe, prazo</li>
+            <li><span class="check">✓</span> Resposta instantânea 24/7</li>
+            <li><span class="check">✓</span> Integrado ao banco de dados da MultiPlusD</li>
+          </ul>
+          <div class="opt-btn">
+            <a href="https://wa.me/5521993962050?text=Ol%C3%A1%20Rafael!%20Tenho%20interesse%20no%20Bot%20de%20Consulta%20de%20Placas%20para%20a%20MultiPlusD.%20Podemos%20conversar%3F" target="_blank" class="plan-cta" style="font-size:14px;padding:12px;background:var(--navy-3);border:1px solid var(--border);color:var(--white);border-radius:12px;text-align:center;text-decoration:none;font-family:'Outfit',sans-serif;font-weight:600;display:block;">Tenho interesse</a>
+          </div>
         </div>
 
       </div>
 
       <!-- Observação geral dos opcionais -->
-      <div style="max-width:900px;margin:20px auto 0;padding:14px 18px;background:rgba(251,191,36,0.07);border:1px solid rgba(251,191,36,0.2);border-radius:10px;">
+      <div style="max-width:1100px;margin:20px auto 0;padding:14px 18px;background:rgba(251,191,36,0.07);border:1px solid rgba(251,191,36,0.2);border-radius:10px;">
         <div style="font-size:12px;font-weight:700;color:#fbbf24;font-family:'Outfit',sans-serif;margin-bottom:4px;">⚠ Observação — Todos os serviços</div>
         <div style="font-size:12px;color:var(--gray);font-family:'Outfit',sans-serif;line-height:1.6;">Qualquer atualização, nova funcionalidade ou alteração fora do escopo contratado em qualquer um dos serviços será cobrada à parte no valor de <strong style="color:var(--white);">R$ 150/hora de trabalho</strong>.</div>
       </div>
